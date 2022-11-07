@@ -23,9 +23,9 @@ server.post('/notes', (req, res) => {
 
 });
 
-server.put('/notes/:id', (req, res) => {
+server.put('/notes/id', (req, res) => {
     let updateNote = req.body
-    let id = req.params.id
+    let id = req.body.id
     let unuptateNote = date.find(item => {return item.id == id})
     let index = date.indexOf(unuptateNote)
     data.splice(index, 1, updateNote)
