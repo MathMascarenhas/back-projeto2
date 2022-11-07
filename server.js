@@ -23,4 +23,13 @@ server.post('/notes', (req, res) => {
 
 });
 
+server.put('/notes/id', async (req, res) => {
+    let updateNote = req.body
+    let id = updateNote.id
+    let unuptateNote =  await date.find(item => {return item.id == id})
+    let index = await date.indexOf(unuptateNote)
+    await data.splice(index, 1, updateNote)
+    return res.status(200);
+})
+
 server.listen(port);
